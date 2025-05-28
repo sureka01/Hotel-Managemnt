@@ -55,7 +55,7 @@ public class UserService {
 
     //login
     public User login(LoginRequest request) {
-        Optional<User> userOpt = userRepository.findByUsername(request.getUsername());
+        Optional<User> userOpt = userRepository.findByEmail(request.getEmail());
 
         if (userOpt.isEmpty()) {
             throw new RuntimeException("Invalid username or password");
